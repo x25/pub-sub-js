@@ -1,0 +1,25 @@
+{
+	"name": "pub-sub-js",
+	"version": "0.0.1",
+	"description": "Distributed publish/subscribe messaging system",
+	"main": "lib",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/x25/pub-sub-js"
+	},
+	"keywords": [
+		"pub",
+		"sub",
+		"pubsub",
+		"publish",
+		"subscribe",
+		"distributed",
+		"network",
+		"messaging"
+	],
+	"author": "X25",
+	"bugs": {
+		"url": "https://github.com/x25/pub-sub-js/issues"
+	},
+	"homepage": "https://github.com/x25/pub-sub-js"
+}
