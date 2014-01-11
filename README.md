@@ -1,4 +1,4 @@
 pub-sub-js
 ==========
 
-Distributed publish subscribe messaging system
+Distributed publish/subscribe messaging system
