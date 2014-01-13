@@ -18,8 +18,9 @@ var publisher = new Pub;
 publisher.listen(8002);
 
 setInterval(function () {
-  publisher.send('channel_one', 'data_str');
-  publisher.send('channel_two', {'data':'object'});
+  publisher.send('channel_one', 'message_one');
+  publisher.send('channel_two', {message: 'two'});
+  publisher.send('channel_three', ['message', 'three']);
 }, 1000);
 ```
 
@@ -42,10 +43,11 @@ subscriber.on('message', function (channel, data) {
 Output:
 
 ```
-channel_one data_str
-channel_two { data: 'object' }
+channel_one message_one
+channel_two { message: 'two' }
 ```
 
+Message number three will not be received, as there is no subscription on channel three. There will be **no network traffic** on publisher.send('channel_three', ...) call.
 
 ## API
 
