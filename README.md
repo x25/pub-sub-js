@@ -8,7 +8,7 @@ $ npm install pub-sub-js
 
 ## Usage
 
-Publish messages:
+Publish messages to channels:
 
 ```js
 var Pub = require('pub-sub-js').Publisher;
@@ -27,7 +27,7 @@ setInterval(function () {
 Subscribe to channels and receive messages:
 
 ```js
-var Sub =  require('pub-sub-js').Subscriber;
+var Sub = require('pub-sub-js').Subscriber;
 
 var subscriber = new Sub;
 
@@ -40,7 +40,7 @@ subscriber.on('message', function (channel, data) {
 });
 ```
 
-Output:
+Subscriber output:
 
 ```
 channel_one message_one
