@@ -1,6 +1,6 @@
 {
 	"name": "pub-sub-js",
-	"version": "0.0.1",
+	"version": "0.1.2",
 	"description": "Distributed publish/subscribe messaging system",
 	"main": "lib",
 	"repository": {
