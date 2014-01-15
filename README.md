@@ -18,9 +18,9 @@ var publisher = new Pub;
 publisher.listen(8002);
 
 setInterval(function () {
-  publisher.send('channel_one', 'message_one');
-  publisher.send('channel_two', {message: 'two'});
-  publisher.send('channel_three', ['message', 'three']);
+  publisher.publish('channel_one', 'message_one');
+  publisher.publish('channel_two', {message: 'two'});
+  publisher.publish('channel_three', ['message', 'three']);
 }, 1000);
 ```
 
@@ -47,8 +47,34 @@ channel_one message_one
 channel_two { message: 'two' }
 ```
 
-Message number three will not be received, as there is no subscription on channel three. There will be **no network traffic** on publisher.send('channel_three', ...) call.
+Message three will not be received, as there is no subscription on channel three. There will be **no network traffic** on publisher.send('channel_three', ...) call.
 
 ## API
 
-Comming soon...
+### Subscriber
+
+**subscribe(channel)**
+
+**unsubscribe(channel)**
+
+**connect(port, host)**
+
+**disconnect(port, host)**
+
+**listen(port, host)**
+
+**close()**
+
+### Publisher
+
+**publish(channel, data)**
+
+**connect(port, host)**
+
+**disconnect(port, host)**
+
+**listen(port, host)**
+
+**close()**
+
+More info comming soon...
