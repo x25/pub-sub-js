@@ -1,6 +1,6 @@
 pub-sub-js
 ==========
-A tiny library that implements distributed publish/subscribe messaging system.
+A tiny library with zero dependencies that implements distributed publish/subscribe messaging system.
 
 ```bash
 $ npm install pub-sub-js
@@ -51,30 +51,56 @@ Message three will not be received, as there is no subscription on channel three
 
 ## API
 
-### Subscriber
+###Class: Subscriber
 
-**subscribe(channel)**
+**.subscribe(channel)**
 
-**unsubscribe(channel)**
+Subscribes to channel.
 
-**connect(port, host)**
+**.unsubscribe(channel)**
 
-**disconnect(port, host)**
+Unsubscribes from channel.
 
-**listen(port, host)**
+**.connect(port, [host])**
 
-**close()**
+Opens connection to Publisher. See [net.Socket.connect()][node-api-net].
 
-### Publisher
+**.disconnect(port, host)**
 
-**publish(channel, data)**
+Closes the connection.
 
-**connect(port, host)**
+**.listen(port, [host])**
 
-**disconnect(port, host)**
+Begin accepting connections on the specified port and hostname. See [net.Server.listen()][node-api-net].
 
-**listen(port, host)**
+**.close()**
 
-**close()**
+Stops from accepting new connections. See [net.Server.close()][node-api-net].
 
-More info comming soon...
+**Event: 'message' (channel, data)**
+
+Emitted when message is received.
+
+###Class: Publisher
+
+**.publish(channel, message)**
+
+Publish message to channel.
+
+**.connect(port, [host])**
+
+Opens connection to Subscriber. See [net.Socket.connect()][node-api-net].
+
+**.disconnect(port, host)**
+
+Closes the connection.
+
+**.listen(port, [host])**
+
+Begin accepting connections on the specified port and hostname. See [net.Server.listen()][node-api-net].
+
+**.close()**
+
+Stops from accepting new connections. [See net.Server.close()][node-api-net].
+
+[node-api-net]: http://nodejs.org/api/net.html
