@@ -40,7 +40,7 @@ subscriber.on('message', function (channel, data) {
 });
 ```
 
-Subscriber output:
+Output:
 
 ```
 channel_one message_one
@@ -65,7 +65,7 @@ Unsubscribes from channel.
 
 Opens connection to Publisher. See [net.Socket.connect()][node-api-net].
 
-**.disconnect(port, host)**
+**.disconnect(port, [host])**
 
 Closes the connection.
 
@@ -91,7 +91,7 @@ Publish message to channel.
 
 Opens connection to Subscriber. See [net.Socket.connect()][node-api-net].
 
-**.disconnect(port, host)**
+**.disconnect(port, [host])**
 
 Closes the connection.
 
