@@ -101,6 +101,6 @@ Begin accepting connections on the specified port and hostname. See [net.Server.
 
 **.close()**
 
-Stops from accepting new connections. [See net.Server.close()][node-api-net].
+Stops from accepting new connections. See [net.Server.close()][node-api-net].
 
 [node-api-net]: http://nodejs.org/api/net.html
