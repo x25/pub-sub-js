@@ -13,7 +13,7 @@ Publish messages to channels:
 ```js
 var Pub = require('pub-sub-js').Publisher;
 
-var publisher = new Pub;
+var publisher = new Pub();
 
 publisher.listen(8002);
 
@@ -29,7 +29,7 @@ Subscribe to channels and receive messages:
 ```js
 var Sub = require('pub-sub-js').Subscriber;
 
-var subscriber = new Sub;
+var subscriber = new Sub();
 
 subscriber.subscribe('channel_one');
 subscriber.connect(8002, '127.0.0.1');
@@ -73,13 +73,15 @@ Closes the connection.
 
 Begin accepting connections on the specified port and hostname. See [net.Server.listen()][node-api-net].
 
-**.close()**
+**.close([callback])**
 
 Stops from accepting new connections. See [net.Server.close()][node-api-net].
 
 **Event: 'message' (channel, data)**
 
 Emitted when message is received.
+
+**Event: 'log' (args)**
 
 ###Class: Publisher
 
@@ -99,8 +101,14 @@ Closes the connection.
 
 Begin accepting connections on the specified port and hostname. See [net.Server.listen()][node-api-net].
 
-**.close()**
+**.close([callback])**
 
 Stops from accepting new connections. See [net.Server.close()][node-api-net].
+
+**Event: 'log' (args)**
+
+## License
+
+MIT
 
 [node-api-net]: http://nodejs.org/api/net.html
