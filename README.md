@@ -83,6 +83,8 @@ Emitted when message is received.
 
 **Event: 'log' (args)**
 
+Can be used for debugging.
+
 ###Class: Publisher
 
 **.publish(channel, message)**
@@ -106,6 +108,14 @@ Begin accepting connections on the specified port and hostname. See [net.Server.
 Stops from accepting new connections. See [net.Server.close()][node-api-net].
 
 **Event: 'log' (args)**
+
+Can be used for debugging.
+
+## Tests
+
+```sh
+$ npm test
+```
 
 ## License
 
