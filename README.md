@@ -1,10 +1,12 @@
-pub-sub-js
+pub-sub-js [![](https://travis-ci.org/x25/pub-sub-js.png)](https://travis-ci.org/x25/pub-sub-js)
 ==========
 A tiny library with zero dependencies that implements distributed publish/subscribe messaging system.
 
 ```bash
 $ npm install pub-sub-js
 ```
+
+Why not use zeromq ? because of this [bug](https://github.com/JustinTulloss/zeromq.node/issues/272).
 
 ## Usage
 

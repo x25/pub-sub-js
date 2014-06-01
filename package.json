@@ -1,11 +1,11 @@
 {
 	"name": "pub-sub-js",
-	"version": "0.1.7",
+	"version": "0.1.9",
 	"description": "Distributed publish/subscribe messaging system",
 	"main": "lib",
-    "scripts": {
-        "test": "NODE_ENV=test ./node_modules/.bin/nodeunit test/*.js"
-    },
+	"scripts": {
+		"test": "NODE_ENV=test ./node_modules/.bin/nodeunit test/*.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "http://github.com/x25/pub-sub-js"
@@ -20,12 +20,13 @@
 		"network",
 		"messaging"
 	],
-    "devDependencies": {
-        "nodeunit": "latest"
-    },
+	"devDependencies": {
+		"nodeunit": "latest"
+	},
+	"author": "x25",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/x25/pub-sub-js/issues"
 	},
-	"homepage": "https://github.com/x25/pub-sub-js",
-    "license": "MIT"
+	"homepage": "https://github.com/x25/pub-sub-js"
 }
