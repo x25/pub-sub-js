@@ -1,10 +1,11 @@
 {
 	"name": "pub-sub-js",
-	"version": "0.1.9",
+	"version": "1.0.1",
 	"description": "Distributed publish/subscribe messaging system",
-	"main": "lib",
+	"main": "index.js",
 	"scripts": {
-		"test": "NODE_ENV=test ./node_modules/.bin/nodeunit test/*.js"
+		"test": "NODE_ENV=test ./node_modules/.bin/nodeunit test/*.js",
+		"coveralls": "jscoverage lib && NODE_COV=1 nodeunit --reporter=lcov test | coveralls"
 	},
 	"repository": {
 		"type": "git",
@@ -21,6 +22,8 @@
 		"messaging"
 	],
 	"devDependencies": {
+		"coveralls": "latest",
+		"jscoverage": "latest",
 		"nodeunit": "latest"
 	},
 	"author": "x25",

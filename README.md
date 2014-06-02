@@ -1,4 +1,4 @@
-pub-sub-js [![](https://travis-ci.org/x25/pub-sub-js.png)](https://travis-ci.org/x25/pub-sub-js)
+pub-sub-js [![](https://travis-ci.org/x25/pub-sub-js.png)](https://travis-ci.org/x25/pub-sub-js) [![](https://coveralls.io/repos/x25/pub-sub-js/badge.png)](https://coveralls.io/r/x25/pub-sub-js)
 ==========
 A tiny library with zero dependencies that implements distributed publish/subscribe messaging system.
 
