@@ -20,9 +20,11 @@ var publisher = new Pub();
 publisher.listen(8002);
 
 setInterval(function () {
+
   publisher.publish('channel_one', 'message_one');
   publisher.publish('channel_two', {message: 'two'});
   publisher.publish('channel_three', ['message', 'three']);
+
 }, 1000);
 ```
 
@@ -38,6 +40,7 @@ subscriber.connect(8002, '127.0.0.1');
 subscriber.subscribe('channel_two');
 
 subscriber.on('message', function (channel, data) {
+
   console.log(channel, data);
 });
 ```

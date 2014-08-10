@@ -55,7 +55,7 @@ module.exports = {
 
 	testSubToPub: function (test) {
 
-		test.expect(4);
+		test.expect(5);
 
 		var publisher = new PubSub.Publisher();
 
@@ -75,9 +75,24 @@ module.exports = {
 
 		subscriber.subscribe('channel_one');
 
+		subscriber.subscribe('channel_two');
+
 		subscriber.connect(8002, '127.0.0.1');
 
-		subscriber.subscribe('channel_two');
+		subscriber.connect(8002, '127.0.0.1');
+
+		subscriber.connect(8003, '127.0.0.1');
+
+		subscriber.subscribe('channel_one');
+
+		try {
+
+			subscriber.subscribe('a\nb');
+
+		} catch (e) {
+
+			test.ok(true);
+		}
 
 		var n = 1;
 
@@ -115,7 +130,13 @@ module.exports = {
 
 			subscriber.unsubscribe('channel_two');
 
+			subscriber.unsubscribe('channel_two');
+
+			subscriber.unsubscribe('channel_x');
+
 			subscriber.disconnect(8002, '127.0.0.1');
+
+			subscriber.disconnect(8003, '127.0.0.1');
 
 			publisher.close();
 
@@ -137,6 +158,10 @@ module.exports = {
 		var subscriber = new PubSub.Subscriber();
 
 		publisher.connect(8002, '127.0.0.1');
+
+		publisher.connect(8002, '127.0.0.1');
+
+		publisher.connect(8003, '127.0.0.1');
 
 		setTimeout(function () {
 
@@ -190,7 +215,11 @@ module.exports = {
 
 			subscriber.unsubscribe('channel_two');
 
+			subscriber.unsubscribe('channel_undefined');
+
 			publisher.disconnect(8002, '127.0.0.1');
+
+			publisher.disconnect(8003, '127.0.0.1');
 
 			subscriber.close();
 
