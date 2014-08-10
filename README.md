@@ -1,12 +1,12 @@
 pub-sub-js [![](https://travis-ci.org/x25/pub-sub-js.png)](https://travis-ci.org/x25/pub-sub-js) [![](https://coveralls.io/repos/x25/pub-sub-js/badge.png)](https://coveralls.io/r/x25/pub-sub-js)
 ==========
-A tiny library with zero dependencies that implements distributed publish/subscribe messaging system.
+**pub-sub-js** is tiny library with zero dependencies that implements distributed publish/subscribe messaging system.
 
 ```bash
 $ npm install pub-sub-js
 ```
 
-Why not use zeromq ? because of this [bug](https://github.com/JustinTulloss/zeromq.node/issues/272).
+Why not use zeromq ? Because of this [bug](https://github.com/JustinTulloss/zeromq.node/issues/272).
 
 ## Usage
 
@@ -26,7 +26,7 @@ setInterval(function () {
 }, 1000);
 ```
 
-Subscribe to channels and receive messages:
+Subscribe to channels and receive the messages:
 
 ```js
 var Sub = require('pub-sub-js').Subscriber;
@@ -49,7 +49,7 @@ channel_one message_one
 channel_two { message: 'two' }
 ```
 
-Message three will not be received, as there is no subscription on channel three. There will be **no network traffic** on publisher.send('channel_three', ...) call.
+Message three will not be received because there is no subscription to the channel_three. There will be **no network traffic** on publisher.send('channel_three', ...) call.
 
 ## API
 
@@ -57,15 +57,15 @@ Message three will not be received, as there is no subscription on channel three
 
 **.subscribe(channel)**
 
-Subscribes to channel.
+Subscribes to the channel.
 
 **.unsubscribe(channel)**
 
-Unsubscribes from channel.
+Unsubscribes from the channel.
 
 **.connect(port, [host])**
 
-Opens connection to Publisher. See [net.Socket.connect()][node-api-net].
+Opens connection to the Publisher. See [net.Socket.connect()][node-api-net].
 
 **.disconnect(port, [host])**
 
@@ -81,7 +81,7 @@ Stops from accepting new connections. See [net.Server.close()][node-api-net].
 
 **Event: 'message' (channel, data)**
 
-Emitted when message is received.
+Emitted when the message is received.
 
 **Event: 'log' (args)**
 
@@ -91,11 +91,11 @@ Can be used for debugging.
 
 **.publish(channel, message)**
 
-Publish message to channel.
+Publish message to the channel.
 
 **.connect(port, [host])**
 
-Opens connection to Subscriber. See [net.Socket.connect()][node-api-net].
+Opens connection to the Subscriber. See [net.Socket.connect()][node-api-net].
 
 **.disconnect(port, [host])**
 
